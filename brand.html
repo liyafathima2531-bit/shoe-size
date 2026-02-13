@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Brand</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button onclick="selectBrand('Nike')">Nike</button>
+<button onclick="selectBrand('Adidas')">Adidas</button>
+<button onclick="selectBrand('Puma')">Puma</button>
+<script>
+    function selectBrand(brand) {
+        window.location.href = "size.html?brand=" + brand;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Size</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="brandTitle"></h1>
+
+    <label>Enter Shoe Size:</label><br><br>
+    <input type="number" id="sizeInput" placeholder="e.g. 6, 7, 8"><br><br>
+
+    <button onclick="checkSize()">Check Availability</button>
+
+    <script>
+        // Get brand name from URL
+        const params = new URLSearchParams(window.location.search);
+        const brand = params.get("brand") || "Brand";
+
+        document.getElementById("brandTitle").innerText =
+            "Brand: " + brand;
+
+        function checkSize() {
+            const size = document.getElementById("sizeInput").value;
+            if (!size) {
+                alert("Please enter shoe size");
+            } else {
+                alert("Checking size " + size + " for " + brand);
+            }
+        }
+    </script>
+
+</body>
+</html>
