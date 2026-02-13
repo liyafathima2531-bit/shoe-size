@@ -1,25 +1,24 @@
-# [Project Name] 🎯
-fit finder
+# fit finder 🎯
+
 ## Basic Details
 
-### Team Name: [Name]
-HERtz
+### Team Name: HERtz
+
 ### Team Members
-- Member 1: [liya fathima] - [College]
-- Member 2: [minha] - [College]
+- Member 1: liya fathima - SSC COLLEGE
+- Member 2: minha] - SSC COLLEGE
 
 ### Hosted Project Link
-[mention your project hosted link here]
+mention your project hosted link here
 
 ### Project Descriptionyy
-[fit finder lets customers quickly check shoe size availability and price by scanning the a qr code scanner.select a brand,enter your size,and instant know if it is in stock it
-saves time for both shoppers and shopkeepers]
+fit finder lets customers quickly check shoe size availability and price by scanning the a qr code scanner.select a brand,enter your size,and instant know if it is in stock it saves time for both shoppers and shopkeepers
 
 ### The Problem statement
-[customers waste time seareching for shoes of a specific size and brand in stores]
+customers waste time seareching for shoes of a specific size and brand in stores
 
 ### The Solution
-[fit finder solves this by letting customers instantly check size availability and price using qr code]
+fit finder solves this by letting customers instantly check size availability and price using qr code
 
 ---
 
