@@ -50,3 +50,24 @@
     background-color: #104e8b;
     transform: scale(1.05);
 }
+
+/* Shoe gallery */
+.shoe-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.shoe-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    transition: transform 0.3s;
+}
+
+.shoe-img:hover {
+    transform: scale(1.1);
+}

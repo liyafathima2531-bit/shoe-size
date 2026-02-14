@@ -47,10 +47,10 @@ function checkSize() {
         if (shoe.stock > 0) {
             resultDiv.innerHTML = `
                 <span style='color:green;'>Size ${size} is AVAILABLE for ${brand}.</span><br><br>
-                <button id="showBtn" class="enter-btn">Show</button>
+                <button id="showBtn" class="enter-btn">finish</button>
             `;
             document.getElementById("showBtn").addEventListener("click", function() {
-                window.location.href = `display.html?brand=${brand}&size=${size}`;
+                window.location.href = `greeting.html`;
             });
         } else {
             resultDiv.innerHTML = `
