@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Check Size</title>
+    <title>Check Shoe Size</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 id="brandTitle"></h1>
+<div class="container">
+    <h1 class="title" id="brandTitle"></h1>
+    <p class="subtitle">Enter your shoe size to check availability</p>
 
-    <label>Enter Shoe Size:</label><br><br>
-    <input type="number" id="sizeInput" placeholder="e.g. 6, 7, 8"><br><br>
+    <input type="number" id="sizeInput" placeholder="e.g. 6, 7, 8">
+    <button onclick="checkSize()" class="enter-btn">Check Availability</button>
 
-    <button onclick="checkSize()">Check Availability</button>
+    <div id="result" style="margin-top:20px; font-size:18px;"></div>
+</div>
 
-    <script>
-        // Get brand name from URL
-        const params = new URLSearchParams(window.location.search);
-        const brand = params.get("brand") || "Brand";
+<script>
+const shoes = [
+    { brand: "NIKE", size: 6, stock: 5 },
+    { brand: "NIKE", size: 7, stock: 0 },
+    { brand: "ADIDAS", size: 6, stock: 3 },
+    { brand: "PUMA", size: 8, stock: 2 },
+    { brand: "NIKE", size: 8,stock:6},
+    { brand: "ADIDAS", size: 7,stock:5},
+    { brand: "PUMA", size: 6,stock:4},
+];
 
-        document.getElementById("brandTitle").innerText =
-            "Brand: " + brand;
+const params = new URLSearchParams(window.location.search);
+const brand = params.get("brand");
 
-        function checkSize() {
-            const size = document.getElementById("sizeInput").value;
-            if (!size) {
-                alert("Please enter shoe size");
-            } else {
-                alert("Checking size " + size + " for " + brand);
-            }
+document.getElementById("brandTitle").innerText = "Brand: " + brand;
+
+function checkSize() {
+    const size = parseInt(document.getElementById("sizeInput").value);
+    const resultDiv = document.getElementById("result");
+
+    if (!size) {
+        resultDiv.innerHTML = "<span style='color:red;'>Please enter a shoe size.</span>";
+        return;
+    }
+
+    const shoe = shoes.find(s => s.brand === brand && s.size === size);
+
+    if (shoe) {
+        if (shoe.stock > 0) {
+            resultDiv.innerHTML = `
+                <span style='color:green;'>Size ${size} is AVAILABLE for ${brand}.</span><br><br>
+                <button id="showBtn" class="enter-btn">Show</button>
+            `;
+            document.getElementById("showBtn").addEventListener("click", function() {
+                window.location.href = `display.html?brand=${brand}&size=${size}`;
+            });
+        } else {
+            resultDiv.innerHTML = `
+                <span style='color:red;'>Size ${size} is SOLD OUT for ${brand}.</span><br><br>
+                <button onclick="goBack()" class="enter-btn">Choose another brand</button>
+            `;
         }
-    </script>
+    } else {
+        resultDiv.innerHTML = `
+            <span style='color:red;'>Size ${size} is NOT available for ${brand}.</span><br><br>
+            <button onclick="goBack()" class="enter-btn">Choose another brand</button>
+        `;
+    }
+}
+
+function goBack() {
+    window.location.href = "brand.html";
+}
+</script>
 
 </body>
 </html>

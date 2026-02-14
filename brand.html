@@ -6,11 +6,17 @@
 </head>
 <body>
 
-    <button onclick="selectBrand('Nike')">Nike</button>
-<button onclick="selectBrand('Adidas')">Adidas</button>
-<button onclick="selectBrand('Puma')">Puma</button>
-<script>
-    function selectBrand(brand) {
-        window.location.href = "size.html?brand=" + brand;
-    }
-</script>
+<div class="container">
+    <h1 class="title">Shoe Section</h1>
+    <p class="subtitle">Choose your preferred brand</p>
+
+    <div class="brand-list">
+        <a href="size.html?brand=NIKE" class="brand-btn">NIKE</a>
+        <a href="size.html?brand=ADIDAS" class="brand-btn">ADIDAS</a>
+        <a href="size.html?brand=PUMA" class="brand-btn">PUMA</a>
+    </div>
+</div>
+
+</body>
+</html>
+
